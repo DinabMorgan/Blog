@@ -4,61 +4,57 @@ using template_csharp_blog.Models;
 
 namespace template_csharp_blog.Controllers
 {
-    public class CatagoryController : Controller
-
+    public class PlatformController : Controller
     {
         public BlogContext db { get; set; }
-        public CatagoryController(BlogContext db)
+        public PlatformController(BlogContext db)
         {
             this.db = db;
         }
-
         public IActionResult Index()
         {
-            return View(db.Catagories.ToList());
+            return View(db.Platforms.ToList());
         }
-
         public IActionResult Create()
         {
-            ViewBag.Catagories = new SelectList(db.Catagories.ToList(), "Id", "Name");
-            return View(new Catagory());
+            ViewBag.Platforms = new SelectList(db.Platforms.ToList(), "Id", "Name");
+            return View(new Platform());
         }
 
         [HttpPost]
-        public IActionResult Create(Catagory model)
+        public IActionResult Create(Platform model)
         {
-            db.Catagories.Add(model);
+            db.Platforms.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Details(int id)
         {
-            return View(db.Catagories.Find(id));
+            return View(db.Platforms.Find(id)); 
         }
         public IActionResult Update(int id)
         {
-            ViewBag.Catagories = new SelectList(db.Catagories.ToList(), "Id", "Name");
-            return View(db.Catagories.Find(id));
+            ViewBag.Platforms = new SelectList(db.Platforms.ToList(), "Id", "Name");
+            return View(db.Platforms.Find(id));
         }
         [HttpPost]
-        public IActionResult Update(Catagory model)
+        public IActionResult Update(Platform model)
         {
-            db.Catagories.Update(model);
+            db.Platforms.Update(model);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Delete(int id)
         {
-            Catagory catagory = db.Catagories.Find(id);
-            return View(catagory);
+           Platform platform = db.Platforms.Find(id);
+            return View(platform);
         }
         [HttpPost]
-        public IActionResult Delete(Catagory model)
+        public IActionResult Delete(Platform model)
         {
-            db.Catagories.Remove(model);
+            db.Platforms.Remove(model);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
     }
 }
-

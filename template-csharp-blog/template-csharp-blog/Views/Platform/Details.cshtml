@@ -1,0 +1,39 @@
+﻿@model template_csharp_blog.Models.Platform
+
+@{
+    ViewData["Title"] = "Details";
+}
+<body class="Allpage">
+<h1>Details</h1>
+
+<div>
+    <h4>Platform</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+           
+             Cost per Month
+        </dt>
+        <dd class = "col-sm-10">
+           $@Html.DisplayFor(model => model.Cost)
+          
+        </dd>
+    </dl>
+</div>
+@foreach(Post a in Model.Posts)
+{
+    <h3>@a.Title</h3>
+    <h5> @a.Author</h5>
+    <p> @a.Thoughts</p>
+}
+<div>
+    <a asp-action="Update" asp-route-id="@Model?.Id">Update</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>

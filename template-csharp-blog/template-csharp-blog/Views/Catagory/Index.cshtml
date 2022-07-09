@@ -1,7 +1,25 @@
-﻿
+﻿@model IEnumerable<template_csharp_blog.Models.Catagory>
+
 @{
     ViewData["Title"] = "Index";
 }
+<body class="Allpage">
 
-<h1>Index</h1>
+<h1>Catagories</h1>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+ <h4> Click to see the shows under the catagory!</h4> 
+ 
+           
+@foreach (var item in Model) {
+  
+           
+    <ul>
+            <a asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.Name)</a> 
+           </ul>
+}
+
+</body>

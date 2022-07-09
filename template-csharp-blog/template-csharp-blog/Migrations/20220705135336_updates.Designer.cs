@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using template_csharp_blog;
 
@@ -11,9 +12,10 @@ using template_csharp_blog;
 namespace template_csharp_blog.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20220705135336_updates")]
+    partial class updates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -222,7 +224,7 @@ namespace template_csharp_blog.Migrations
                             Id = 1,
                             Author = "Dina",
                             CatagoryId = 1,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6159),
+                            DateTime = new DateTime(2022, 7, 5, 9, 53, 35, 721, DateTimeKind.Local).AddTicks(765),
                             IsRewatchable = true,
                             PlatformId = 4,
                             Rating = 8,
@@ -234,7 +236,7 @@ namespace template_csharp_blog.Migrations
                             Id = 2,
                             Author = "Dina",
                             CatagoryId = 2,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6224),
+                            DateTime = new DateTime(2022, 7, 5, 9, 53, 35, 721, DateTimeKind.Local).AddTicks(822),
                             IsRewatchable = true,
                             PlatformId = 1,
                             Rating = 10,
@@ -246,7 +248,7 @@ namespace template_csharp_blog.Migrations
                             Id = 3,
                             Author = "Dina",
                             CatagoryId = 5,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6232),
+                            DateTime = new DateTime(2022, 7, 5, 9, 53, 35, 721, DateTimeKind.Local).AddTicks(828),
                             IsRewatchable = true,
                             PlatformId = 10,
                             Rating = 10,
@@ -258,7 +260,7 @@ namespace template_csharp_blog.Migrations
                             Id = 4,
                             Author = "Dina",
                             CatagoryId = 7,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6237),
+                            DateTime = new DateTime(2022, 7, 5, 9, 53, 35, 721, DateTimeKind.Local).AddTicks(833),
                             IsRewatchable = true,
                             PlatformId = 1,
                             Rating = 10,
@@ -270,7 +272,7 @@ namespace template_csharp_blog.Migrations
                             Id = 5,
                             Author = "Dina",
                             CatagoryId = 4,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6241),
+                            DateTime = new DateTime(2022, 7, 5, 9, 53, 35, 721, DateTimeKind.Local).AddTicks(836),
                             IsRewatchable = false,
                             PlatformId = 8,
                             Rating = 2,

@@ -2,17 +2,17 @@
 {
     public class Catagory
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public virtual List<Catagory> Catagories { get; set; }
+     public int Id { get; set; }
+     public string Name { get; set; } // should this be an enum?
+     public virtual List<Post> posts { get; set; }
 
 
-        public Catagory()
-        {
+        //public Catagory()
+        //{
 
-        }
+        //}
 
-   
+
 
     }
 }

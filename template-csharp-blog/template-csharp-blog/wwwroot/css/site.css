@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 25px;
+  
 }
 
 @media (min-width: 768px) {
@@ -9,10 +10,44 @@ html {
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    
 }
 
 body {
   margin-bottom: 60px;
+  
+}
+.Welcome {
+    background-image: url("../Images/clipart-tv-vintage-tv-6.png");
+    background-repeat:no-repeat;
+    height: 1500px;
+    margin-left: 150px;
+   
+}
+.title {
+    padding-top: 500px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.mainpageP {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 75px;
+}
+
+
+.delete {
+    color: indianred;
+}
+.Allpage {
+    background-color: #D6B85A
+}
+.container-fluid {
+    background-color: #D6B85A
+}
+footer {
+    background-color: #D6B85A
 }

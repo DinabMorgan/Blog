@@ -1,0 +1,32 @@
+﻿@model template_csharp_blog.Models.Catagory
+
+@{
+    ViewData["Title"] = "Details";
+}
+<body class="Allpage">
+<h1>Details</h1>
+
+<div>
+    <h4>Catagory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+
+@foreach(Post p in Model.posts)
+{
+    <h3>@p.Title</h3>
+    <h5> @p.Author</h5>
+    <p> @p.Thoughts</p>
+}
+<div>
+   
+    <a asp-action="Index">Back to List</a>
+</div>
+</body>
