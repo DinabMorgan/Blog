@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int CatagoryId  { get; set; }    
-        public virtual Catagory Catagory { get; set; }
+        public int CategoryId  { get; set; }    
+        public virtual Category Categories { get; set; }
         public string Author { get; set; }
         public string Thoughts { get; set; }
         public bool IsRewatchable { get; set; }

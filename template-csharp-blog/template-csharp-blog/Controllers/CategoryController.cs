@@ -4,58 +4,58 @@ using template_csharp_blog.Models;
 
 namespace template_csharp_blog.Controllers
 {
-    public class CatagoryController : Controller
+    public class CategoryController : Controller
 
     {
         public BlogContext db { get; set; }
-        public CatagoryController(BlogContext db)
+        public CategoryController(BlogContext db)
         {
             this.db = db;
         }
 
         public IActionResult Index()
         {
-            return View(db.Catagories.ToList());
+            return View(db.Categories.ToList());
         }
 
         public IActionResult Create()
         {
-            ViewBag.Catagories = new SelectList(db.Catagories.ToList(), "Id", "Name");
-            return View(new Catagory());
+            ViewBag.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+            return View(new Category());
         }
 
         [HttpPost]
-        public IActionResult Create(Catagory model)
+        public IActionResult Create(Category model)
         {
-            db.Catagories.Add(model);
+            db.Categories.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Details(int id)
         {
-            return View(db.Catagories.Find(id));
+            return View(db.Categories.Find(id));
         }
         public IActionResult Update(int id)
         {
-            ViewBag.Catagories = new SelectList(db.Catagories.ToList(), "Id", "Name");
-            return View(db.Catagories.Find(id));
+            ViewBag.Categories = new SelectList(db.Categories.ToList(), "Id", "Name");
+            return View(db.Categories.Find(id));
         }
         [HttpPost]
-        public IActionResult Update(Catagory model)
+        public IActionResult Update(Category model)
         {
-            db.Catagories.Update(model);
+            db.Categories.Update(model);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Delete(int id)
         {
-            Catagory catagory = db.Catagories.Find(id);
-            return View(catagory);
+            Category category = db.Categories.Find(id);
+            return View(category);
         }
         [HttpPost]
-        public IActionResult Delete(Catagory model)
+        public IActionResult Delete(Category model)
         {
-            db.Catagories.Remove(model);
+            db.Categories.Remove(model);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

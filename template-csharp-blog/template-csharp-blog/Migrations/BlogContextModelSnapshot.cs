@@ -22,7 +22,7 @@ namespace template_csharp_blog.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("template_csharp_blog.Models.Catagory", b =>
+            modelBuilder.Entity("template_csharp_blog.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace template_csharp_blog.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Catagories");
+                    b.ToTable("Categories");
 
                     b.HasData(
                         new
@@ -185,7 +185,7 @@ namespace template_csharp_blog.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CatagoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DateTime")
@@ -210,7 +210,7 @@ namespace template_csharp_blog.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CatagoryId");
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("PlatformId");
 
@@ -221,8 +221,8 @@ namespace template_csharp_blog.Migrations
                         {
                             Id = 1,
                             Author = "Dina",
-                            CatagoryId = 1,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6159),
+                            CategoryId = 1,
+                            DateTime = new DateTime(2022, 7, 8, 22, 59, 58, 1, DateTimeKind.Local).AddTicks(4007),
                             IsRewatchable = true,
                             PlatformId = 4,
                             Rating = 8,
@@ -233,8 +233,8 @@ namespace template_csharp_blog.Migrations
                         {
                             Id = 2,
                             Author = "Dina",
-                            CatagoryId = 2,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6224),
+                            CategoryId = 2,
+                            DateTime = new DateTime(2022, 7, 8, 22, 59, 58, 1, DateTimeKind.Local).AddTicks(4046),
                             IsRewatchable = true,
                             PlatformId = 1,
                             Rating = 10,
@@ -245,8 +245,8 @@ namespace template_csharp_blog.Migrations
                         {
                             Id = 3,
                             Author = "Dina",
-                            CatagoryId = 5,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6232),
+                            CategoryId = 5,
+                            DateTime = new DateTime(2022, 7, 8, 22, 59, 58, 1, DateTimeKind.Local).AddTicks(4049),
                             IsRewatchable = true,
                             PlatformId = 10,
                             Rating = 10,
@@ -257,8 +257,8 @@ namespace template_csharp_blog.Migrations
                         {
                             Id = 4,
                             Author = "Dina",
-                            CatagoryId = 7,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6237),
+                            CategoryId = 7,
+                            DateTime = new DateTime(2022, 7, 8, 22, 59, 58, 1, DateTimeKind.Local).AddTicks(4052),
                             IsRewatchable = true,
                             PlatformId = 1,
                             Rating = 10,
@@ -269,8 +269,8 @@ namespace template_csharp_blog.Migrations
                         {
                             Id = 5,
                             Author = "Dina",
-                            CatagoryId = 4,
-                            DateTime = new DateTime(2022, 7, 5, 9, 54, 25, 624, DateTimeKind.Local).AddTicks(6241),
+                            CategoryId = 4,
+                            DateTime = new DateTime(2022, 7, 8, 22, 59, 58, 1, DateTimeKind.Local).AddTicks(4053),
                             IsRewatchable = false,
                             PlatformId = 8,
                             Rating = 2,
@@ -281,9 +281,9 @@ namespace template_csharp_blog.Migrations
 
             modelBuilder.Entity("template_csharp_blog.Models.Post", b =>
                 {
-                    b.HasOne("template_csharp_blog.Models.Catagory", "Catagory")
+                    b.HasOne("template_csharp_blog.Models.Category", "Category")
                         .WithMany("posts")
-                        .HasForeignKey("CatagoryId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -293,12 +293,12 @@ namespace template_csharp_blog.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Catagory");
+                    b.Navigation("Category");
 
                     b.Navigation("Platform");
                 });
 
-            modelBuilder.Entity("template_csharp_blog.Models.Catagory", b =>
+            modelBuilder.Entity("template_csharp_blog.Models.Category", b =>
                 {
                     b.Navigation("posts");
                 });

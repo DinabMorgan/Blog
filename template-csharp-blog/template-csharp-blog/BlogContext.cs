@@ -7,7 +7,7 @@ namespace template_csharp_blog
 {
     public class BlogContext: DbContext
     {
-        public DbSet<Catagory> Catagories { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet <Platform> Platforms { get; set; } 
 
@@ -20,17 +20,17 @@ namespace template_csharp_blog
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Catagory>().HasData(
-                new Catagory() { Id = 1, Name = "Action" },
-                new Catagory() { Id = 2, Name = "Comedy" },
-                new Catagory() { Id = 3, Name = "RomCom" },
-                new Catagory() { Id = 4, Name = "Drama" },
-                new Catagory() { Id = 5, Name = "SciFi" },
-                new Catagory() { Id = 6, Name = "Fantasy"},
-                new Catagory() { Id = 7, Name = "Animation"},
-                new Catagory() { Id = 8, Name = "Kids"},
-                new Catagory() { Id = 9, Name = "Mystical" },
-                new Catagory() { Id = 10, Name = "Reality"}
+            modelBuilder.Entity<Category>().HasData(
+                new Category() { Id = 1, Name = "Action" },
+                new Category() { Id = 2, Name = "Comedy" },
+                new Category() { Id = 3, Name = "RomCom" },
+                new Category() { Id = 4, Name = "Drama" },
+                new Category() { Id = 5, Name = "SciFi" },
+                new Category() { Id = 6, Name = "Fantasy"},
+                new Category() { Id = 7, Name = "Animation"},
+                new Category() { Id = 8, Name = "Kids"},
+                new Category() { Id = 9, Name = "Mystical" },
+                new Category() { Id = 10, Name = "Reality"}
                 );
             modelBuilder.Entity<Platform>().HasData(
                 new Platform() { Id = 1, Name = "Netflix", Cost = 15.99},
@@ -45,15 +45,16 @@ namespace template_csharp_blog
                 new Platform() { Id = 10, Name = "Paramount+", Cost = 5.99 }
                 );
             modelBuilder.Entity<Post>().HasData(
-             new Post() { Id = 1, CatagoryId = 1, Author = "Dina", Title = "MoonKnight", DateTime = DateTime.Now, IsRewatchable = true, Rating = 8, Thoughts = "Gripping", PlatformId = 4 },
-             new Post() { Id = 2, CatagoryId = 2, Author = "Dina", Title = "Schitt's Creek", DateTime = DateTime.Now, IsRewatchable = true, Rating = 10, Thoughts = "Well Wishes and Warmest Regards", PlatformId = 1 },
-             new Post() { Id = 3, CatagoryId = 5, Author = "Dina", Title = "Star Trek", DateTime = DateTime.Now, IsRewatchable = true, Rating = 10, Thoughts = "", PlatformId = 10 },
-             new Post() { Id = 4, CatagoryId = 7, Author = "Dina", Title = "She-Ra", DateTime = DateTime.Now, IsRewatchable = true, Rating = 10, Thoughts = "By the power of Greyskull", PlatformId = 1 },
-             new Post() { Id = 5, CatagoryId = 4, Author = "Dina", Title = "NCIS", DateTime = DateTime.Now, IsRewatchable = false, Rating = 2, Thoughts = "Very Repeatative ", PlatformId = 8 }
+             new Post() { Id = 1, CategoryId = 1, Author = "Dina", Title = "MoonKnight", DateTime = DateTime.Now, IsRewatchable = true, Rating = 8, Thoughts = "Gripping", PlatformId = 4 },
+             new Post() { Id = 2, CategoryId = 2, Author = "Dina", Title = "Schitt's Creek", DateTime = DateTime.Now, IsRewatchable = true, Rating = 10, Thoughts = "Well Wishes and Warmest Regards", PlatformId = 1 },
+             new Post() { Id = 3, CategoryId = 5, Author = "Dina", Title = "Star Trek", DateTime = DateTime.Now, IsRewatchable = true, Rating = 10, Thoughts = "", PlatformId = 10 },
+             new Post() { Id = 4, CategoryId = 7, Author = "Dina", Title = "She-Ra", DateTime = DateTime.Now, IsRewatchable = true, Rating = 10, Thoughts = "By the power of Greyskull", PlatformId = 1 },
+             new Post() { Id = 5, CategoryId = 4, Author = "Dina", Title = "NCIS", DateTime = DateTime.Now, IsRewatchable = false, Rating = 2, Thoughts = "Very Repeatative ", PlatformId = 8 }
 
              );
-
+            base.OnModelCreating(modelBuilder);
         }
+        
 
 
     }

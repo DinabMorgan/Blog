@@ -22,7 +22,7 @@ namespace template_csharp_blog.Controllers
         public IActionResult Create()
         {
 
-            ViewBag.catagories = new SelectList(db.Catagories, "Id", "Name");
+            ViewBag.categories = new SelectList(db.Categories, "Id", "Name");
             ViewBag.platforms = new SelectList(db.Platforms, "Id", "Name");
             return View(new Post());
         }
@@ -38,7 +38,7 @@ namespace template_csharp_blog.Controllers
         public IActionResult Update(int id)
         {
 
-            ViewBag.catagories = new SelectList(db.Catagories, "Id", "Name");
+            ViewBag.categories = new SelectList(db.Categories, "Id", "Name");
             ViewBag.platforms = new SelectList(db.Platforms, "Id", "Name");
             return View(db.Posts.Find(id));
         }
